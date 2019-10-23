@@ -1,0 +1,33 @@
+{% extends 'myapp/bar/navbar.html' %}
+
+{% block content %}
+<center>
+    <section id="contact-page">
+        <div class="container">
+            <div class="center">
+                <font face = "Comic sans MS" size =" 5">แปลงเลขทศนิยมเป็น IEEE 64bit</font><br />
+                
+            </div>
+            <center>
+                <form action='' method="post">
+                    {% csrf_token %}
+                    <input name="x" type="number" step=any class="form-control" placeholder="ค่าที่ต้องการแปลง"/ value="{{d}}">
+                    <br>
+                    <input type="submit" class="btn btn-primary" ></input>
+                </form>
+                <br>
+            </center>
+        </center>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+					<div class="card-header">ผลลัพธ์</div>
+					<div class="card-body">
+					  <h4 class="card-title">s = {{s}}</h4>
+					  <h4 class="card-title">e = {{e}}</h4>
+					  <h4 class="card-title">f = {{f}}</h4>
+					  <p class="card-text">ทุกคำถามมีคำตอบ</p>
+					  <h4 class="card-title">แปลงกลับเป็น : {{conb}}</h4>
+					</div>
+				  </div>
+    </section>
+
+{% endblock content %}

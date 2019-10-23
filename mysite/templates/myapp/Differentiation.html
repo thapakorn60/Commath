@@ -1,0 +1,56 @@
+{% extends 'myapp/bar/navbar.html' %}
+
+{% block content %}
+<div class="container">
+    <section class="headline-sec">
+        <div class="overlay center">
+            <h3>Differentiation หาค่าประมาณของฟังก์ชั่น</h3>
+        </div>
+    </section>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="alert alert-primary">
+                    <div class="form-group">
+                        <strong>กรอกข้อมูลต่อไปนี้</strong> <br />
+                        <form action='' method="post">
+                            {% csrf_token %}
+                            เลือกฟังก์ชั่น
+                            <select class="form-control" name=function>
+                                <option value="taylorseries">Taylor Series</option>
+                            </select>
+                            ค่าประมาณของฟังก์ชั่น
+                            <input name="fx" type="text" step=any class="form-control" placeholder="e**x" value="e**x">
+                            x
+                            <input name="x" type="number" step=any class="form-control" placeholder="0" value="0">
+                            h
+                            <input name="h" type="number" step=any class="form-control" placeholder="0.001"
+                                value="0.001">
+                            <input type="submit" class="btn btn-primary"></input>
+                            <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <center>
+                </center>
+                    <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                            <div class="card-header">ผลลัพธ์</div>
+                            <div class="card-body">
+                              <h4 class="card-title">re1 = {{re1}}</h4>
+                              <h4 class="card-title">re2 = {{re2}}</h4>
+                              <h4 class="card-title">re3 = {{re3}}</h4>
+                              <h4 class="card-title">re4 = {{re4}}</h4>
+                              <p class="card-text">ทุกคำถามมีคำตอบ</p>
+                              <h4 class="card-title">แปลงกลับเป็น : {{conb}}</h4>
+                            </div>
+                          </div>
+                
+            
+        </div>
+    </div>
+</section>
+{% endblock content %}
